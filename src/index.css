@@ -5,3 +5,15 @@
 body {
   font-family: "Roboto", sans-serif;
 }
+
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-sky-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-sky-500 hover:bg-sky-600 rounded-lg;
+}
