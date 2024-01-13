@@ -1,6 +1,5 @@
 export const getNotes = async () => {
-  const url =
-    "https://script.google.com/macros/s/AKfycbz8UdIZts7pZNol-YORGCdaokYemkTTwMA4bmFmBs6HRFQDC6uRCg609_yWeiMdBPE/exec";
+  const url = import.meta.env.VITE_BASE_URL;
   const response = await fetch(url);
   const data = await response.json();
   return data;
@@ -8,7 +7,9 @@ export const getNotes = async () => {
 
 export const addNotes = async (data, onSuccess) => {
   const { date, id, title, description } = data;
-  const url = `https://script.google.com/macros/s/AKfycbz8UdIZts7pZNol-YORGCdaokYemkTTwMA4bmFmBs6HRFQDC6uRCg609_yWeiMdBPE/exec?action=add&date=${date}&id=${id}&title=${title}&description=${description}`;
+  const url = `${
+    import.meta.env.VITE_BASE_URL
+  }?action=add&date=${date}&id=${id}&title=${title}&description=${description}`;
   const options = {
     method: "POST",
   };
@@ -20,7 +21,7 @@ export const addNotes = async (data, onSuccess) => {
 };
 
 export const deleteNotes = async (id, onSuccess) => {
-  const url = `https://script.google.com/macros/s/AKfycbz8UdIZts7pZNol-YORGCdaokYemkTTwMA4bmFmBs6HRFQDC6uRCg609_yWeiMdBPE/exec?action=delete&id=${id}`;
+  const url = `${import.meta.env.VITE_BASE_URL}?action=delete&id=${id}`;
   const options = {
     method: "POST",
   };
