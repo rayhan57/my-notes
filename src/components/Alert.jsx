@@ -20,7 +20,7 @@ const Alert = ({ showAlert, setShowAlert, alertMessage }) => {
     <>
       {showAlert && (
         <motion.div
-          className={`flex items-center gap-2 ${statusAlert} text-white rounded-lg text-sm lg:text-base p-2 mt-3`}
+          className={`flex items-center gap-2 ${statusAlert} mt-3 rounded-lg p-2 text-sm text-white lg:text-base`}
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
         >

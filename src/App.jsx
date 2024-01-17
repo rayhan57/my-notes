@@ -24,7 +24,7 @@ const App = () => {
   const fetchData = async () => {
     const response = await getNotes();
     const sortedData = response.data.sort(
-      (a, b) => new Date(b.date) - new Date(a.date)
+      (a, b) => new Date(b.date) - new Date(a.date),
     );
 
     setNotes(sortedData);
@@ -71,7 +71,7 @@ const App = () => {
 
   return (
     <div className="container">
-      <div className="flex justify-between items-center border-b p-4">
+      <div className="flex items-center justify-between border-b p-4">
         <a href="/">
           <img src="/logo.svg" className="w-24" />
         </a>
@@ -93,7 +93,7 @@ const App = () => {
       {notes?.length > 0 ? (
         <Cards notes={currentNotes} handleDeleteNotes={handleDeleteNotes} />
       ) : (
-        <p className="text-center font-semibold mt-3">Tidak ada catatan</p>
+        <p className="mt-3 text-center font-semibold">Tidak ada catatan</p>
       )}
 
       <Pagination

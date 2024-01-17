@@ -39,7 +39,7 @@ const AddButton = ({
   return (
     <div className="relative" ref={modalRef}>
       <button
-        className="bg-sky-500 hover:bg-sky-600 text-white shadow-lg py-1.5 px-3 rounded-lg flex items-center gap-2 text-sm lg:text-base"
+        className="flex items-center gap-2 rounded-lg bg-sky-500 px-3 py-1.5 text-sm text-white shadow-lg hover:bg-sky-600 lg:text-base"
         onClick={() => setModalOpen(!modalOpen)}
       >
         <IoIosAddCircleOutline size={20} />
@@ -47,9 +47,9 @@ const AddButton = ({
       </button>
 
       {modalOpen && (
-        <div className="absolute z-10 top-10 -left-14 md:-left-10">
+        <div className="absolute -left-14 top-10 z-10 md:-left-10">
           <motion.div
-            className="flex flex-col gap-6 border-t border-slate-50 shadow-xl rounded-lg overflow-hidden bg-white"
+            className="flex flex-col gap-6 overflow-hidden rounded-lg border-t border-slate-50 bg-white shadow-xl"
             initial={{ y: -40 }}
             animate={{ y: 0 }}
           >
@@ -59,7 +59,7 @@ const AddButton = ({
                 id="title"
                 placeholder="Title"
                 value={formData.title}
-                className="block h-8 border-0 placeholder:font-semibold font-semibold text-lg capitalize focus:ring-0 p-1"
+                className="block h-8 border-0 p-1 text-lg font-semibold capitalize placeholder:font-semibold focus:ring-0"
                 onChange={handleInputChange}
               />
               <textarea
@@ -67,17 +67,17 @@ const AddButton = ({
                 id="description"
                 placeholder="Description"
                 value={formData.description}
-                className="block w-full border-0 resize-none focus:ring-0 p-1"
+                className="block w-full resize-none border-0 p-1 focus:ring-0"
                 onChange={handleInputChange}
               />
             </div>
-            <p className="bg-sky-500 text-white text-sm px-2 py-1">
+            <p className="bg-sky-500 px-2 py-1 text-sm text-white">
               {currentDate}
             </p>
           </motion.div>
 
           <motion.button
-            className="mx-auto bg-sky-500 hover:bg-sky-600 text-white shadow-lg py-1.5 px-3 rounded-lg flex items-center gap-2 text-sm mt-2"
+            className="mx-auto mt-2 flex items-center gap-2 rounded-lg bg-sky-500 px-3 py-1.5 text-sm text-white shadow-lg hover:bg-sky-600"
             onClick={handleAddNotes}
             initial={{ y: -40 }}
             animate={{ y: 0 }}
